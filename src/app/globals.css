@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffaf3;
+  --foreground: #241417;
+
+  /* Brand palette (from brief) */
+  --color-rose: #e91e63;
+  --color-amber: #ff9800;
+  --color-leaf: #4caf50;
+  --color-royal: #1565c0;
+  --color-gold: #ffc107;
+  --color-ink: #1b1032;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-rose: var(--color-rose);
+  --color-amber: var(--color-amber);
+  --color-leaf: var(--color-leaf);
+  --color-royal: var(--color-royal);
+  --color-gold: var(--color-gold);
+  --color-ink: var(--color-ink);
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Signature: festoon / celebration gradient text */
+.brand-gradient-text {
+  background: linear-gradient(90deg, var(--color-rose), var(--color-amber), var(--color-leaf), var(--color-royal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Signature: mandap-arch shape used as a recurring motif */
+.arch-shape {
+  border-top-left-radius: 999px;
+  border-top-right-radius: 999px;
+}
+
+.section-eyebrow {
+  letter-spacing: 0.25em;
+}
+
+::selection {
+  background: var(--color-rose);
+  color: white;
+}
+
+/* focus visibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-royal);
+  outline-offset: 2px;
+}
